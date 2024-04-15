@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  :root{
+    --mainColor: #0d0b0b;
+    --mainLightColor: #73d4ac;
+    --secondaryColor:#136d48;
+    --textColor:#f1ecec;
+  }
+  
+  header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    height: 80px;
+    padding: 0;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+  }
+  
+  nav a{
+    margin: 0 2rem;
+    color: var(--textColor);
+    text-align: right;
+  }
+  
+  nav a:hover{
+    color:var(--secondaryColor);
+  }
