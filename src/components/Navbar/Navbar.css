@@ -3,7 +3,7 @@
     margin: 0;
   }
   :root{
-    --mainColor: #0d0b0b;
+    --mainColor: rgb(14, 14, 26);;
     --mainLightColor: #73d4ac;
     --secondaryColor:#136d48;
     --textColor:#f1ecec;
