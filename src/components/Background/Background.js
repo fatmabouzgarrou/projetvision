@@ -14,8 +14,33 @@ import image3 from '../../assets/img3.png';
 import image4 from '../../assets/img4.png';
 import image5 from '../../assets/img5.jpeg';
 
+import Swal from 'sweetalert2'
+
 const images = [image1, image2, image3, image4, image5];
 
+const handleClick = () =>{
+  Swal.fire({
+    background:"#0e0e1a",
+    color:"white",
+    title: "Are you sure?",
+    text: "You want to predict this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#da7dac",
+    cancelButtonColor: "#b78de2",
+    confirmButtonText: "Yes"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        background:"#0e0e1a",
+        color:"white",
+        title: "Okay!",
+        text: "Progress...",
+        icon: "success",
+      });
+    }
+  });
+}
 
 const LeftSection = () => (
   <div className="left-section">
@@ -25,7 +50,7 @@ const LeftSection = () => (
       Powered by deep learning models, our system can identify objects, scenes, and even complex patterns in images, providing valuable insights and enhancing your understanding of visual data.
       </p>
     </div>
-    <a href="#" className="btn"><span>Start Predict</span></a>
+    <a href="#" className="btn" onClick={() => handleClick()}><span>Start Predict</span></a>
   </div>
 );
 
