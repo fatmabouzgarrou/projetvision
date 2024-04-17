@@ -1,13 +1,10 @@
-import Navbar from './components/Navbar/Navbar'; 
-import "../src/components/Navbar/Navbar";
-import Background from './components/Background/Background';
+import PageOne from './pages/PageOne';
 
 function App() {
   return (
    
     <div>
-      <Navbar />
-      <Background />
+      <PageOne />
     </div>
   );
     
