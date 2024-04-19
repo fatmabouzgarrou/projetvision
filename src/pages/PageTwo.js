@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar/Navbar'; 
 import PerformanceSection from '../components/PerformanceSection/PerformanceSection';
-import ComparaisonSection from '../components/ComparaisonSection/ComparaisonSection';
+import VisualizationSection from '../components/VisualizationSection/VisualizationSection';
 
 
 function PageTwo() {
@@ -9,7 +9,7 @@ function PageTwo() {
     <div>
       <Navbar />
       <PerformanceSection/>
-      <ComparaisonSection/>
+      <VisualizationSection/>
     </div>
   );
     

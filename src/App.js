@@ -1,10 +1,11 @@
 import PageOne  from './pages/PageOne';
+import PageTwo from './pages/PageTwo';
 
 function App() {
   return (
    
     <div>
-      <PageOne />
+      <PageTwo />
     </div>
   );
     
