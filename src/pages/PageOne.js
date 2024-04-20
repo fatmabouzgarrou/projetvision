@@ -10,6 +10,10 @@ function PageOne() {
       <Background/>
       <div className="cards-container">
         <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
+
       </div> 
     </div>
   );
