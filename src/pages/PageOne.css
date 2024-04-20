@@ -1,0 +1,10 @@
+.page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cards-container {
+   display: flex;
+   flex-direction: row;
+  }
+  

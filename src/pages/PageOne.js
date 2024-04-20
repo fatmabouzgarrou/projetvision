@@ -1,15 +1,18 @@
 import Navbar from '../components/Navbar/Navbar'; 
 import Background from '../components/Background/Background';
+import Cards from '../components/Cards/Cards';
+import './PageOne.css';
 
 function PageOne() {
   return (
-   
-    <div>
+    <div className="page">
       <Navbar />
-      <Background />
+      <Background/>
+      <div className="cards-container">
+        <Cards />
+      </div> 
     </div>
   );
-    
 }
 
 export default PageOne;

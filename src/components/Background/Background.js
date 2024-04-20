@@ -72,7 +72,7 @@ const RightSection = () => (
 
 
 const Background = () => (
-  <div className="container">
+  <div className="containerBack">
     <LeftSection />
     <RightSection />
   </div>
