@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Background from '../components/Background/Background';
 import Cards from '../components/Cards/Cards';
 import './PageOne.css';
+import Footer from '../components/Footer/Footer';
 
 function PageOne() {
   return (
@@ -14,7 +15,8 @@ function PageOne() {
         <Cards />
         <Cards />
 
-      </div> 
+      </div>
+      <Footer/> 
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar/Navbar'; 
 import PerformanceSection from '../components/PerformanceSection/PerformanceSection';
 import VisualizationSection from '../components/VisualizationSection/VisualizationSection';
+import Footer from '../components/Footer/Footer';
 
 
 function PageTwo() {
@@ -10,6 +11,7 @@ function PageTwo() {
       <Navbar />
       <PerformanceSection/>
       <VisualizationSection/>
+      <Footer/>
     </div>
   );
     

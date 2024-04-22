@@ -40,18 +40,20 @@ img {
 .text {
   width: 60%;
   max-width: 60%;
-  text-align: top;
+  text-align: top; /* Cela semble incorrect. Assurez-vous que c'est ce que vous voulez. */
   font-family: 'Montserrat';
   font-size: 1.2rem;
   line-height: 1.6;
   color: var(--primary-color);
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 0.4em;
+  border-radius: 2em;
   transition: transform 0.3s ease-in-out;
   font-size: 100%;
-  margin-left: 5%; 
+  margin-left: 5%;
+  border: 2px solid black; /* Ajoute une bordure de 1 pixel solide en noir */
 }
+
 
 .text h2 {
   margin-bottom: 10px;
