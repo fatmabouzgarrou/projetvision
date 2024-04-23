@@ -1,14 +1,17 @@
-import PageOne  from './pages/PageOne';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PageOne from './pages/PageOne';
 import PageTwo from './pages/PageTwo';
 
 function App() {
   return (
-   
-    <div>
-      <PageTwo />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PageOne />} />
+        <Route path="/pageTwo" element={<PageTwo />} />
+      </Routes>
+    </Router>
   );
-    
 }
 
 export default App;

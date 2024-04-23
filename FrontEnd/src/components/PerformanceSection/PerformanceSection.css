@@ -25,7 +25,7 @@
 }
 
 img {
-  width: 100%;
+  width: 700px;
   max-width: var(--card-max-width); /* Use the variable for max-width */
   height: auto;
   object-fit: cover;

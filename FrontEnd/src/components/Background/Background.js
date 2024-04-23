@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -25,10 +26,11 @@ import image5 from '../../assets/img5.jpeg';
 const images = [image1, image2, image3, image4, image5];
 
 const Background = () => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
   const [downloadOpen, setDownloadOpen] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null); // State pour le fichier sélectionné
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -43,11 +45,6 @@ const Background = () => {
   };
 
   const handleModalButtonClick = () => {
-    handleClose();
-    handleClick();
-  };
-
-  const handleClick = () => {
     if (!selectedOption) {
       Swal.fire({
         background:"#0e0e1a",
@@ -57,8 +54,8 @@ const Background = () => {
         icon: "error"
       });
     } else {
-      setOpen(false); // Fermer le modal de sélection du modèle
-      setDownloadOpen(true); // Ouvrir le modal de téléchargement
+      setOpen(false);
+      setDownloadOpen(true);
     }
   };
 
@@ -71,15 +68,39 @@ const Background = () => {
     setSelectedFile(file);
   };
 
-  const handleDownload = () => {
+  const handleDownload = async () => {
     if (selectedFile) {
-      const fileUrl = URL.createObjectURL(selectedFile);
-      window.open(fileUrl);
-      URL.revokeObjectURL(fileUrl); // Libérer la mémoire après avoir ouvert le fichier
-      setDownloadOpen(false); // Fermer le modal après le téléchargement
+      const formData = new FormData();
+      formData.append('image', selectedFile);
+      formData.append('model_id', 1)
+  
+      try {
+        const response = await fetch('http://127.0.0.1:8000/api/predict/', {
+          method: 'POST',
+          body: formData
+        });
+  
+        if (!response.ok) {
+          throw new Error('Failed to fetch');
+        }
+  
+        const predictionResult = await response.json();
+        navigate('/pageTwo', { state: { selectedFile, predictionResult } });
+      } catch (error) {
+        console.error(error);
+        Swal.fire({
+          background: "#0e0e1a",
+          color: "white",
+          title: "Error",
+          text: "Failed to fetch prediction result",
+          icon: "error"
+        });
+      } finally {
+        setDownloadOpen(false);
+      }
     }
   };
-
+  
   const LeftSection = () => (
     <div className="left-section">
       <div>
@@ -123,7 +144,6 @@ const Background = () => {
           >
             <FormControlLabel value="CNN" control={<Radio />} label="CNN" />
             <FormControlLabel value="VGG16" control={<Radio />} label="VGG16" />
-            <FormControlLabel value="RESNET" control={<Radio />} label="RESNET" />
           </RadioGroup>
         </DialogContent>
         <DialogActions>

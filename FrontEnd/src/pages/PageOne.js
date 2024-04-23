@@ -1,4 +1,6 @@
-import Navbar from '../components/Navbar/Navbar'; 
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar';
 import Background from '../components/Background/Background';
 import Cards from '../components/Cards/Cards';
 import './PageOne.css';
@@ -14,7 +16,6 @@ function PageOne() {
         <Cards />
         <Cards />
         <Cards />
-
       </div>
       <Footer/> 
     </div>
