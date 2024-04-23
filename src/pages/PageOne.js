@@ -3,6 +3,9 @@ import Background from '../components/Background/Background';
 import Cards from '../components/Cards/Cards';
 import './PageOne.css';
 import Footer from '../components/Footer/Footer';
+import fatma from '../assets/fatma.jpg';
+import yosra from '../assets/yosra.jpg';
+
 
 function PageOne() {
   return (
@@ -10,12 +13,12 @@ function PageOne() {
       <Navbar />
       <Background/>
       <div className="cards-container">
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-
-      </div>
+      
+      <Cards profileImage={fatma} />
+      <Cards profileImage={yosra} />
+      <Cards profileImage={fatma} />
+      <Cards profileImage={fatma} />
+    </div>
       <Footer/> 
     </div>
   );

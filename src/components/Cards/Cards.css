@@ -84,3 +84,11 @@
   width: 100%;
   margin-bottom: 20%;
 }
+.profile-image{
+  height: 140px;
+  width:150px;
+  border-radius: 20%;
+}
+.icons{
+  size: 100px;
+}
