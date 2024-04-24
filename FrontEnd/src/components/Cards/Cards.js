@@ -16,10 +16,10 @@ function Cards({ profileImage, cardPhrase }) {
             <img src={profileImage} alt="Profile" className="profile-image" />
 
             <p className="heading">{cardPhrase}</p>
-            <p className="follow">Follow me for more...</p>
+            <p className="follow"></p>
           </div>
           <div className="back">
-            <p className="heading">Follow Me</p>
+            <p className="heading">Contact Me On</p>
 
             <div className="icons">
               <a><FaGithub size={40}/></a>
