@@ -1,4 +1,6 @@
-import Navbar from '../components/Navbar/Navbar'; 
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar';
 import Background from '../components/Background/Background';
 import Cards from '../components/Cards/Cards';
 import './PageOne.css';
@@ -17,15 +19,12 @@ function PageOne() {
       <Navbar />
       <Background/>
       <div className="cards-container">
-      
-      <Cards profileImage={fatma} cardPhrase="Fatma BOUZGARROU "/>
-      <Cards profileImage={yosra} cardPhrase="Yosra Omrane"/>
-      <Cards profileImage={mariem} cardPhrase="Meriem MAATALLAH"/>
-      <Cards profileImage={asma} cardPhrase="Asma GUIZA"/>
-    </div>
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
 
-
-
+      </div>
       <Footer/> 
     </div>
   );
